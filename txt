@@ -1,0 +1,29 @@
+CREATE TABLE questions(
+	cid int (11) not null AUTO_INCREMENT PRIMARY KEY,
+    uid VARCHAR (128) not null,
+    date datetime not null,
+    message TEXT not null
+
+
+
+);
+
+
+
+
+<?php
+if($_POST){
+    $name = $_POST['name'];
+    $content = $_POST['questionContent'];
+    $handle = fopen("index.php", "a");
+    fwrite($handle, "br" .$name. "</br>:<br/>".$content. "</br>");
+    fclose($handle);
+    }
+?>
+
+		<form action="" method="POST">
+		    Question: <textarea row = "30" cols = "30" nema = "questionContent"></textarea><br/>
+		    Name: <input type = "text" name = "name"><br/>
+		    <input type = "submit" value = "POST"><br/>
+
+		</form>
